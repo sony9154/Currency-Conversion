@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CurrencyVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="CurrencyVC" id="Y6W-OH-hqX" customClass="CurrencyVC" customModule="Currency_Conversion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wE2-cT-Pma">
+                                <rect key="frame" x="20" y="44" width="374" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="ESL-0K-FV1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1IM-bn-rf3">
+                                <rect key="frame" x="100" y="83" width="294" height="73.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faX-xx-Wdt">
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="18.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="*">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="0.14913000000000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="13" name="PingFangTC-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" Currency">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="13" name="PingFangTC-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HlH-GY-7tH" userLabel="row - text">
+                                        <rect key="frame" x="0.0" y="23.5" width="294" height="50"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="USD" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5jr-F1-JgZ" customClass="IconTextfield" customModule="Currency_Conversion" customModuleProvider="target">
+                                                <rect key="frame" x="10" y="0.0" width="284" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowshape.turn.up.left" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bZG-Ot-mr8">
+                                                <rect key="frame" x="244" y="1" width="50" height="47.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="4uI-Qf-G0p"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="bZG-Ot-mr8" secondAttribute="bottom" id="BRa-jt-G5q"/>
+                                            <constraint firstItem="5jr-F1-JgZ" firstAttribute="leading" secondItem="HlH-GY-7tH" secondAttribute="leading" constant="10" id="F0H-1Q-RSl"/>
+                                            <constraint firstItem="bZG-Ot-mr8" firstAttribute="top" secondItem="HlH-GY-7tH" secondAttribute="top" id="Qxl-Tc-cbA"/>
+                                            <constraint firstAttribute="trailing" secondItem="bZG-Ot-mr8" secondAttribute="trailing" id="Umg-sR-XSB"/>
+                                            <constraint firstAttribute="bottom" secondItem="5jr-F1-JgZ" secondAttribute="bottom" id="WL4-Lf-aAd"/>
+                                            <constraint firstAttribute="trailing" secondItem="5jr-F1-JgZ" secondAttribute="trailing" id="aGb-yx-kWA"/>
+                                            <constraint firstItem="5jr-F1-JgZ" firstAttribute="top" secondItem="HlH-GY-7tH" secondAttribute="top" id="hze-Q0-mMg"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OKD-BW-yDH">
+                                <rect key="frame" x="20" y="164" width="374" height="732"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HsT-hw-D3Z">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExchangeRatesCell" id="9hW-x2-WHL" customClass="ExchangeRatesCell" customModule="Currency_Conversion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="47.5" height="47.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EUf-XB-cVn">
+                                            <rect key="frame" x="0.0" y="0.0" width="47.5" height="47.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="chS-Y2-wYD">
+                                                    <rect key="frame" x="5" y="5" width="37.5" height="37.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eB2-Iv-g7E">
+                                                            <rect key="frame" x="0.0" y="0.0" width="37.5" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJg-Vt-LR0">
+                                                            <rect key="frame" x="0.0" y="18" width="37.5" height="19.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                            <constraints>
+                                                <constraint firstItem="chS-Y2-wYD" firstAttribute="leading" secondItem="EUf-XB-cVn" secondAttribute="leading" constant="5" id="0fo-Gu-6jh"/>
+                                                <constraint firstItem="chS-Y2-wYD" firstAttribute="top" secondItem="EUf-XB-cVn" secondAttribute="top" constant="5" id="9OB-W3-ArJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="chS-Y2-wYD" secondAttribute="bottom" constant="5" id="i7l-XU-dfN"/>
+                                                <constraint firstAttribute="trailing" secondItem="chS-Y2-wYD" secondAttribute="trailing" constant="5" id="sQS-SW-RDw"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="aJg-Vt-LR0" id="oWR-tl-eXI"/>
+                                            <outlet property="currencyLabel" destination="eB2-Iv-g7E" id="ysw-4S-aD9"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYp-Rv-OVK">
+                                <rect key="frame" x="16" y="116.5" width="55" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="eF0-AH-lPr"/>
+                                    <constraint firstAttribute="width" constant="55" id="xs3-0z-0S7"/>
+                                </constraints>
+                                <state key="normal" title="Convert"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OKD-BW-yDH" firstAttribute="top" secondItem="1IM-bn-rf3" secondAttribute="bottom" constant="7.5" id="2IG-mM-iBS"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wE2-cT-Pma" secondAttribute="trailing" constant="20" id="3qI-XP-rKX"/>
+                            <constraint firstItem="wE2-cT-Pma" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="5e1-Zj-eAz"/>
+                            <constraint firstItem="jYp-Rv-OVK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="7zG-vQ-5je"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1IM-bn-rf3" secondAttribute="trailing" constant="20" id="Hgd-0K-fK5"/>
+                            <constraint firstItem="OKD-BW-yDH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Prf-Hx-U3a"/>
+                            <constraint firstItem="jYp-Rv-OVK" firstAttribute="centerY" secondItem="5jr-F1-JgZ" secondAttribute="centerY" id="Q0E-hE-nJk"/>
+                            <constraint firstItem="wE2-cT-Pma" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="U9d-Ig-l4n"/>
+                            <constraint firstItem="1IM-bn-rf3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="100" id="Wcp-ii-lTm"/>
+                            <constraint firstItem="1IM-bn-rf3" firstAttribute="top" secondItem="wE2-cT-Pma" secondAttribute="bottom" constant="5" id="Wjy-qM-y2P"/>
+                            <constraint firstAttribute="bottom" secondItem="OKD-BW-yDH" secondAttribute="bottom" id="Yd2-0P-APg"/>
+                            <constraint firstItem="wE2-cT-Pma" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="t7K-F1-CGK"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OKD-BW-yDH" secondAttribute="trailing" constant="20" id="vdf-bY-dcr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="amountTextField" destination="wE2-cT-Pma" id="Cgj-zn-dLN"/>
+                        <outlet property="collectionView" destination="OKD-BW-yDH" id="63i-ca-wEk"/>
+                        <outlet property="convertButton" destination="jYp-Rv-OVK" id="Oi7-Wo-coc"/>
+                        <outlet property="countryTextField" destination="5jr-F1-JgZ" id="tBv-hG-3qM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13.043478260869566" y="88.392857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrowshape.turn.up.left" catalog="system" width="128" height="106"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
