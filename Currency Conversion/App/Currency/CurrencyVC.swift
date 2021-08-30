@@ -35,7 +35,10 @@ class CurrencyVC: NodeVC,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
         settingField()
     }
     
@@ -106,8 +109,10 @@ class CurrencyVC: NodeVC,
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         countryTextField.text = node?.currencies.value?[row].code
-        self.countryTextField.resignFirstResponder()
-
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 }
