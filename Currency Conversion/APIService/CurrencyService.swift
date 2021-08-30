@@ -26,7 +26,7 @@ class CurrencyService {
             switch result {
             case .success(var currencies):
                 currencies = currencies.compactMap({
-                    ExchangeRate(currency: $0.currency?.replacingOccurrences(of: "USD", with: "", options: String.CompareOptions.literal, range: $0.currency?.range(of: "USD")),
+                    ExchangeRate(currency: $0.currency?.replacingOccurrences(of: defaultCurrency, with: "", options: String.CompareOptions.literal, range: $0.currency?.range(of: defaultCurrency)),
                                  rate: $0.rate,
                                  amount: nil)
                 })

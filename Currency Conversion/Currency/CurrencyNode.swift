@@ -16,16 +16,27 @@ class CurrencyNode: Node {
     var exchangeRates = RxVar<[ExchangeRate]?>(nil)
     var convertedRates = RxVar<[ExchangeRate]?>(nil)
     var newAmounts = RxVar<[Double]?>(nil)
+    var currencyString = RxVar<String?>(nil)
+    var inputAmount = RxVar<Double?>(nil)
     
     // MARK: - Action -
     enum Action {
         case fetchCurrencies
         case fetchLiveExchange
         case convertAmount(currency: String, amount: Double)
+        case refreshIn30Minutes
+        case setCurrency(currency: String)
+        case setInputAmount(amount: Double)
     }
     
     func act(_ action: Action, done: ActionCompletion? = nil) {
         switch action {
+        case .setCurrency(let currency):
+            self.currencyString.accept(currency)
+            done?()
+        case .setInputAmount(let amount):
+            self.inputAmount.accept(amount)
+            done?()
         case .fetchCurrencies:
             CurrencyService.shared.getAllCurrencies { [weak self] result in
                 switch result {
@@ -55,7 +66,7 @@ class CurrencyNode: Node {
 
             newExchangeRates = newExchangeRates?.map({
                 var rate: Double
-                if currency == "USD" {
+                if currency == defaultCurrency {
                     rate = $0.rate ?? 1.0
                 } else {
                     let selectedRate: Double = usdToSelectedCurrencyRate?.first?.rate ?? 0
@@ -66,6 +77,10 @@ class CurrencyNode: Node {
             
             self.exchangeRates.accept(newExchangeRates)
             done?()
+        case .refreshIn30Minutes:
+            Timer.scheduledTimer(withTimeInterval: 180, repeats: true) { [weak self] timer in
+                self?.act(.convertAmount(currency: self?.currencyString.value ?? "", amount: self?.inputAmount.value ?? 0.0))
+            }
         }
     }
     
@@ -75,6 +90,9 @@ class CurrencyNode: Node {
         super.setup()
         act(.fetchCurrencies)
         act(.fetchLiveExchange)
+        //refreshed currency every 30 minutes
+        act(.refreshIn30Minutes)
+        
     }
     
 }

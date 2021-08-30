@@ -46,6 +46,7 @@ class CurrencyVC: NodeVC,
             .subscribe{ [weak node] text in
                 guard let amount = self.amountTextField.text else { return }
                 guard let currency = self.countryTextField.text else { return }
+                node?.act(.setInputAmount(amount: Double(amount) ?? 0.0))
                 node?.act(.convertAmount(currency: currency, amount: Double(amount) ?? 0.0))
             }.disposed(by: disposeBag)
         
@@ -53,6 +54,7 @@ class CurrencyVC: NodeVC,
             .filterNil()
             .subscribe(onNext: { [weak self] text in
                 guard let amountStr = self?.amountTextField.text else { return }
+                node.act(.setCurrency(currency: text))
                 node.act(.convertAmount(currency: text, amount: Double(amountStr) ?? 0.0))
             })
             .disposed(by: disposeBag)
@@ -67,11 +69,12 @@ class CurrencyVC: NodeVC,
         node.exchangeRates
             .map { $0 ?? [] }
             .filterNil()
-            .bind(to: collectionView.rx.items(cellIdentifier: "ExchangeRatesCell",
-                                               cellType: ExchangeRatesCell.self))
-            { index, exchangeRate, cell in
-                cell.configure(exchangeRate: exchangeRate, newAmount: exchangeRate.amount)
-            }.disposed(by: disposeBag)
+            .bind(to: collectionView.rx.items(cellIdentifier: "ExchangeRatesCell", cellType: ExchangeRatesCell.self))
+                { index, exchangeRate, cell in
+                    cell.configure(exchangeRate: exchangeRate,
+                                   newAmount: exchangeRate.amount)
+                }
+            .disposed(by: disposeBag)
         
         
     }

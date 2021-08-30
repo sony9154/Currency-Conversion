@@ -13,4 +13,4 @@ struct ExchangeRate: Codable {
     var amount: Double?
 }
 
-
+let defaultCurrency = "USD"
