@@ -78,7 +78,7 @@ class CurrencyNode: Node {
             self.exchangeRates.accept(newExchangeRates)
             done?()
         case .refreshIn30Minutes:
-            Timer.scheduledTimer(withTimeInterval: 180, repeats: true) { [weak self] timer in
+            Timer.scheduledTimer(withTimeInterval: 1800, repeats: true) { [weak self] timer in
                 self?.act(.convertAmount(currency: self?.currencyString.value ?? "", amount: self?.inputAmount.value ?? 0.0))
             }
         }

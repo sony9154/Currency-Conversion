@@ -168,6 +168,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D764C4BD26DD1D4D008C8F55 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D7C23F4526D14A3100D403A6 /* Main */,
+				D7C23F5226D14A3100D403A6 /* APIService */,
+				D7C23F7526D1511E00D403A6 /* Currency */,
+				D7C23F5526D14A3100D403A6 /* Root */,
+				D7C23F5026D14A3100D403A6 /* Models */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		D7C23EF826D1497800D403A6 = {
 			isa = PBXGroup;
 			children = (
@@ -193,12 +205,8 @@
 		D7C23F0326D1497800D403A6 /* Currency Conversion */ = {
 			isa = PBXGroup;
 			children = (
-				D7C23F7526D1511E00D403A6 /* Currency */,
-				D7C23F5226D14A3100D403A6 /* APIService */,
 				D7C23F3426D14A3100D403A6 /* Core */,
-				D7C23F4526D14A3100D403A6 /* Main */,
-				D7C23F5026D14A3100D403A6 /* Models */,
-				D7C23F5526D14A3100D403A6 /* Root */,
+				D764C4BD26DD1D4D008C8F55 /* App */,
 				D7C23F0426D1497800D403A6 /* AppDelegate.swift */,
 				D7C23F0626D1497800D403A6 /* SceneDelegate.swift */,
 				D7C23F0D26D1497A00D403A6 /* Assets.xcassets */,
